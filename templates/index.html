@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Healthcare Translator</title>
+  <script defer src="/static/app.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: auto;
+      padding: 2rem;
+    }
+    textarea {
+      width: 100%;
+      resize: none;
+    }
+    h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>🎙️ Healthcare Translator</h2>
+
+  <div style="margin-bottom: 1rem;">
+    <select id="inputLang">
+      <option value="English">English</option>
+      <option value="Hindi">Hindi</option>
+      <option value="Spanish">Spanish</option>
+      <option value="French">French</option>
+      <option value="German">German</option>
+      <option value="Chinese">Chinese</option>
+      <option value="Arabic">Arabic</option>
+    </select>
+    <span>→</span>
+    <select id="outputLang">
+      <option value="English">English</option>
+      <option value="Hindi">Hindi</option>
+      <option value="Spanish">Spanish</option>
+      <option value="French">French</option>
+      <option value="German">German</option>
+      <option value="Chinese">Chinese</option>
+      <option value="Arabic">Arabic</option>
+    </select>
+    <button onclick="startSpeech()">Start Talking</button>
+  </div>
+
+  <h3>Original</h3>
+  <textarea id="originalText" rows="3" readonly></textarea>
+
+  <h3>Explanation</h3>
+  <textarea id="explanationText" rows="4" readonly></textarea>
+
+  <div id="translatedBox">
+    <h3>Translated Explanation</h3>
+    <textarea id="translatedText" rows="4" readonly></textarea>
+    <button onclick="speakTranslated()"> Speak</button>
+  </div>
+</body>
+</html>
