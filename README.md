@@ -81,11 +81,11 @@ This project aims to **bridge the communication gap** between patients and healt
 
 ## 📂 Screenshot Setup Tips
 
-1. Create a folder called `screenshots/` in your repo
+1. Create a folder called `Images/` in your repo
 2. Save images there as:
    - `voice-input.png`
    - `explanation.png`
-   - `translated.png`
+   - `Translated.png`
 3. GitHub will render them inline in your README
 
 ---
