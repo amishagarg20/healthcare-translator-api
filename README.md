@@ -69,13 +69,13 @@ This project aims to **bridge the communication gap** between patients and healt
 ## 🖼️ Screenshots
 
 ### 🎤 1. Voice Input and Language Selection  
-![Voice Input and Language Dropdown](screenshots/voice-input.png)
+![Voice Input and Language Dropdown](Images/voice-input.png)
 
 ### 📖 2. Medical Term Explanation  
-![Medical Explanation Example](screenshots/explanation.png)
+![Medical Explanation Example](Images/explanation.png)
 
 ### 🌍 3. Translated Explanation with Playback  
-![Translated Output](screenshots/translated.png)
+![Translated Output](Images/Translated.png)
 
 ---
 
