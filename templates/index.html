@@ -5,26 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Healthcare Translator</title>
   <script defer src="/static/app.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: auto;
-      padding: 2rem;
+    * {
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 2rem;
+      max-width: 700px;
+      margin-inline: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1a73e8;
+      margin-bottom: 2rem;
+    }
+
+    select, textarea, button {
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
     textarea {
       width: 100%;
       resize: none;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-top: 0.3rem;
+      margin-bottom: 1rem;
+      background: #fff;
     }
-    h2 {
-      text-align: center;
+
+    select {
+      padding: 0.5rem;
+      margin: 0 0.5rem 1rem 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      padding: 0.6rem 1rem;
+      margin: 0.5rem 0.3rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #155ec1;
+    }
+
+    #translatedBox {
+      margin-top: 1rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      select {
+        display: block;
+        margin-bottom: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h2>🎙️ Healthcare Translator</h2>
+  <h2>🎙️ Healthcare Translation Web App</h2>
 
   <div style="margin-bottom: 1rem;">
+    <label for="inputLang"><strong>Input Language:</strong></label>
     <select id="inputLang">
       <option value="English">English</option>
       <option value="Hindi">Hindi</option>
@@ -34,7 +95,8 @@
       <option value="Chinese">Chinese</option>
       <option value="Arabic">Arabic</option>
     </select>
-    <span>→</span>
+
+    <label for="outputLang"><strong>Output Language:</strong></label>
     <select id="outputLang">
       <option value="English">English</option>
       <option value="Hindi">Hindi</option>
@@ -44,7 +106,11 @@
       <option value="Chinese">Chinese</option>
       <option value="Arabic">Arabic</option>
     </select>
-    <button onclick="startSpeech()">Start Talking</button>
+  </div>
+
+  <div>
+    <button onclick="startSpeech()">🎤 Start Talking</button>
+    <button id="playOriginalAudioBtn" onclick="playOriginalAudio()" style="display:none;">🔊 Play Original Audio</button>
   </div>
 
   <h3>Original</h3>
@@ -56,7 +122,7 @@
   <div id="translatedBox">
     <h3>Translated Explanation</h3>
     <textarea id="translatedText" rows="4" readonly></textarea>
-    <button onclick="speakTranslated()"> Speak</button>
+    <button onclick="speakTranslated()">🔊 Speak Translated</button>
   </div>
 </body>
 </html>
